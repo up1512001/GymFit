@@ -9,7 +9,7 @@ If you click on any exercise card then it will show you detail about that exerci
 Also It show's exercises that target same muscle group and also exercises that use same equipment.
 It's live hosted on netlify.
 
-![Live Link](https://golds-gym-up1512001.netlify.app/)
+[Live Link](https://golds-gym-up1512001.netlify.app/)
 ## Images
 
 ### Basic site view
