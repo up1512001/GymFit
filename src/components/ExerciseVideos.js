@@ -5,7 +5,7 @@ import {Box,Stack,Typography} from '@mui/material';
 
 const ExerciseVideos = ({exerciseVideos,name}) => {
   
-    console.log({exerciseVideos})
+    // console.log({exerciseVideos})
     if(!exerciseVideos.length) return "Loading ..."
   
     return (
@@ -38,7 +38,7 @@ const ExerciseVideos = ({exerciseVideos,name}) => {
                             {item.video.title}
                         </Typography>
                         <Typography variant="h7" color="gray">
-                            From Channel :-> {item.video.channelName}
+                            From Channel :-{`>`} {item.video.channelName}
                         </Typography>
                     </Box>
                 </a>
