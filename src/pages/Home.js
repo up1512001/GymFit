@@ -1,28 +1,45 @@
-import React , { useState } from 'react'
+import React, { useState } from 'react';
+import { Box } from '@mui/material';
 
-import {Box} from '@mui/material';
-
+import Exercises from '../components/Exercises';
 import HeroBanner from '../components/HeroBanner';
 import SearchExercises from '../components/SearchExercises';
-import Exercises from '../components/Exercises';
+// import ExcercisesAge from '../components/ExcercisesAge';
+// import Navbar from '../components/Navbar';
 
+const Home = (age) => {
+    const [bodyPart, setBodyPart] = useState('all')
+    const [exercises, setExercises] = useState([]);
 
+    console.log(`home : ${age}`);
+    return (
+        <Box>
+            <HeroBanner />
+            <SearchExercises setExercises={setExercises}
+                bodyPart={bodyPart}
+                setBodyPart={setBodyPart}
+            />
+            {age === '' && <Exercises setExercises={setExercises}
+                bodyPart={bodyPart}
+                exercises={exercises}
+            />}
+            {age === '18' && <Exercises setExercises={setExercises}
+                bodyPart={'back'}
+                exercises={exercises}
 
-const Home = () => {
+            />}
+            {age === '45' && <Exercises setExercises={setExercises}
+                bodyPart={'cardio'}
+                exercises={exercises}
 
-  const [bodyPart,setBodyPart] = useState('all');
+            />}
+            {age === '60' && <Exercises setExercises={setExercises}
+                bodyPart={'abs'}
+                exercises={exercises}
 
-  const [exercises, setExercises] = useState([]);
-
-  console.log(bodyPart);
-
-  return (
-    <Box>
-      <HeroBanner />
-      <SearchExercises setExercises={setExercises} bodyPart={bodyPart} setBodyPart={setBodyPart} />
-      <Exercises exercises={exercises} setExercises={setExercises} bodyPart={bodyPart}  />
-    </Box>
-  )
+            />}
+        </Box>
+    )
 }
 
 export default Home
