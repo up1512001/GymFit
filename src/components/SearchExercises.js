@@ -5,9 +5,10 @@ import { textTransform } from '@mui/system'
 import { exercisesOptions, fetchData } from '../utils/fetchData'
 import HorizontalScrollbar from './HorizontalScrollbar'
 
-const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
+const SearchExercises = ({ exercises,setExercises, bodyPart, setBodyPart }) => {
     const [search, setSearch] = useState('')
     const [bodyParts, setBodyParts] = useState([]);
+    // var c = 1;
 
     useEffect(() => {
         const fetchExercisesData = async () => {
@@ -16,6 +17,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
 
             // console.log(bodyPartsData)
             setBodyParts(['all', ...bodyPartsData]);
+            // window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' })
             // console.log(bodyParts)
         }
         fetchExercisesData();
@@ -33,10 +35,14 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
                     || exercise.bodyPart.toLowerCase().includes(search)
             );
             setSearch('');
+            // c = 0;
             setExercises(searchExercises);
             // console.log(exercises)
         }
     }
+    useEffect(()=>{
+        window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' })
+    },[exercises])
 
     return (
         <Stack alignItems="center" mt='37px'

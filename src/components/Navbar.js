@@ -9,9 +9,9 @@ import { Block } from '@mui/icons-material';
 import NewFile from './NewFile';
 import ExercisesAge from './ExcercisesAge';
 import App from '../chat/App';
-const Navbar = ({ setAge,setImageclicked }) => {
+const Navbar = ({ setAge,setImageclicked,setLevel }) => {
     // const [navAge, setnavAge] = useState('');
-    const [level, setLevel] = useState();
+    // const [level, setLevel] = useState();
     const [bodyPart, setBodyPart] = useState('back')
     const [exercises, setExercises] = useState([]);
 
@@ -77,12 +77,12 @@ const Navbar = ({ setAge,setImageclicked }) => {
                             //     name: 'age',
                             //     id: 'uncontrolled-native',
                             // }}
-                        // onChange={(e) => { setAge(e.target.value) }}
+                        onChange={(e) => { setAge(e.target.value) }}
                         >
-                            <option onClick={() => (setAge(0))}>Catagory</option>
-                            <option onClick={() => (setAge(20))}>Below 18</option>
-                            <option onClick={() => (setAge(40))}> 18 - 45</option>
-                            <option onClick={() => (setAge(60))}> Above 45</option>
+                            <option value={'0'} >Catagory</option>
+                            <option value = {'20'} >Below 18</option>
+                            <option value = {'40'}> 18 - 45</option>
+                            <option value={'60'} > Above 45</option>
                             {/* {console.log(`setage : ${age}`)} */}
                         </NativeSelect>
                     </FormControl>
@@ -97,12 +97,13 @@ const Navbar = ({ setAge,setImageclicked }) => {
                                 name: 'age',
                                 id: 'uncontrolled-native',
                             }}
-                        // onChange={(e) => { console.log(e.target.value) }}
+                        onChange={(e) => { setLevel(e.target.value) }}
+                        
                         >
-                            <option value={3}>Level</option>
-                            <option value={0}>Beginner</option>
-                            <option value={1}>Intermediate</option>
-                            <option value={2}>Advance</option>
+                            <option value={'0'}>Level</option>
+                            <option value={'1'}>Beginner</option>
+                            <option value={'2'}>Intermediate</option>
+                            <option value={'3'}>Advance</option>
                         </NativeSelect>
                     </FormControl>
 

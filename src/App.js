@@ -19,24 +19,26 @@ const App = () => {
     // }
     // fetchExercisesData()
 
-    const [age, setAge] = useState(0);
+    const [age, setAge] = useState('0');
+    const [level,setLevel] = useState('0');
     const [imageclicked,setImageclicked] = useState(0);
     
     useEffect(()=>{
         console.log(`App : ${age}`);
+        window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' })
     },[age])
 
-    // useEffect(()=>{
-    //     console.log(age)
-    // },[age])
+    useEffect(()=>{
+        window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' })
+    },[level])
     console.log(imageclicked);
     console.log(`app :${age}`);
     return (
         <Box width="400px" sx={{ width: { xl: '1488px' } }} m='auto'>
-            <Navbar setAge={setAge}  setImageclicked={setImageclicked} />
+            <Navbar setAge={setAge}  setImageclicked={setImageclicked} setLevel={setLevel} />
             {console.log(`app : ${age}`)}
             {imageclicked === 0 && <Routes>
-                <Route path="/" element={<Home age={age}  />} />
+                <Route path="/" element={<Home age={age} level={level} />} />
                 <Route path="/exercise/:id" element={<ExerciseDetail />} />
             </Routes>}
             {
