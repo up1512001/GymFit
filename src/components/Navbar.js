@@ -8,8 +8,9 @@ import Exercises from './Exercises';
 import { Block } from '@mui/icons-material';
 import NewFile from './NewFile';
 import ExercisesAge from './ExcercisesAge';
-const Navbar = ({ setAge, age }) => {
-    const [navAge, setnavAge] = useState('');
+import App from '../chat/App';
+const Navbar = ({ setAge,setImageclicked }) => {
+    // const [navAge, setnavAge] = useState('');
     const [level, setLevel] = useState();
     const [bodyPart, setBodyPart] = useState('back')
     const [exercises, setExercises] = useState([]);
@@ -19,13 +20,13 @@ const Navbar = ({ setAge, age }) => {
 
     // const checkExercise = (e) => {
     //     // (e.target.vlaue === 18) ? console.log("dbfjdbfj") : (<NewFile />)
-    useEffect(() => {
-        console.log(navAge);
-        setAge(navAge);
-    }, [navAge])
-    // }
+    // useEffect(() => {
+    //     console.log(navAge);
+    //     setAge(navAge);
+    // }, [navAge])
+    // // }
 
-    console.log(navAge);
+    // console.log(navAge);
     return (
         <div style={{ display: 'flex', backgroundColor: '#3AFFDD', height: '67px', paddingTop: '1px' }}>
             <Stack
@@ -40,7 +41,7 @@ const Navbar = ({ setAge, age }) => {
                     width: '48px'
                     , height: '48px', marginTop: '22px'
                 }}>
-                    <img src={Logo} />
+                    <img onClick={()=>{setImageclicked(0)}} src={Logo} />
                 </Link>
                 <Stack
                     direction="row"
@@ -71,18 +72,18 @@ const Navbar = ({ setAge, age }) => {
                             Catagory
                         </InputLabel> */}
                         <NativeSelect
-                            defaultValue={0}
-                            inputProps={{
-                                name: 'age',
-                                id: 'uncontrolled-native',
-                            }}
+                            // defaultValue={0}
+                            // inputProps={{
+                            //     name: 'age',
+                            //     id: 'uncontrolled-native',
+                            // }}
                         // onChange={(e) => { setAge(e.target.value) }}
                         >
-                            <option onClick={() => (setnavAge(''))}>Catagory</option>
-                            <option value={18} onClick={(e) => (setnavAge(e.target.value))}>Below 18</option>
-                            <option onClick={() => (setnavAge('45'))}> 18 - 45</option>
-                            <option onClick={() => (setnavAge('60'))}> Above 45</option>
-                            {console.log(`setage : ${navAge}`)}
+                            <option onClick={() => (setAge(0))}>Catagory</option>
+                            <option onClick={() => (setAge(20))}>Below 18</option>
+                            <option onClick={() => (setAge(40))}> 18 - 45</option>
+                            <option onClick={() => (setAge(60))}> Above 45</option>
+                            {/* {console.log(`setage : ${age}`)} */}
                         </NativeSelect>
                     </FormControl>
 
@@ -113,7 +114,7 @@ const Navbar = ({ setAge, age }) => {
                 , height: '48px', marginTop: '7px',
                 position: 'absolute', right: '29px'
             }}>
-                <img src={Profile} style={{ height: '50px', width: '50px' }} />
+                <img src={Profile} onClick={()=>{setImageclicked(1)}} style={{ height: '50px', width: '50px' }} />
             </Link>
 
         </div >

@@ -2,7 +2,7 @@
 export const exercisesOptions = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
+        'X-RapidAPI-Key': 'ea80ced351msh4fa1a6600694a89p11b25ejsncf94b3c37909',
         'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
     }
 };
@@ -10,7 +10,7 @@ export const exercisesOptions = {
 export const youtubeOptions = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': '1c2b041490msh0a3e9a63da6747bp18a513jsn55411d18694a',
+        'X-RapidAPI-Key': 'ea80ced351msh4fa1a6600694a89p11b25ejsncf94b3c37909',
         'X-RapidAPI-Host': 'youtube-search-and-download.p.rapidapi.com'
     }
 };

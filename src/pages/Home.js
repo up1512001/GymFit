@@ -7,7 +7,7 @@ import SearchExercises from '../components/SearchExercises';
 // import ExcercisesAge from '../components/ExcercisesAge';
 // import Navbar from '../components/Navbar';
 
-const Home = (age) => {
+const Home = ({age}) => {
     const [bodyPart, setBodyPart] = useState('all')
     const [exercises, setExercises] = useState([]);
 
@@ -19,21 +19,21 @@ const Home = (age) => {
                 bodyPart={bodyPart}
                 setBodyPart={setBodyPart}
             />
-            {age === '' && <Exercises setExercises={setExercises}
+            {age === 0 && <Exercises setExercises={setExercises}
                 bodyPart={bodyPart}
                 exercises={exercises}
             />}
-            {age === '18' && <Exercises setExercises={setExercises}
+            {age === 20 && <Exercises setExercises={setExercises}
                 bodyPart={'back'}
                 exercises={exercises}
 
             />}
-            {age === '45' && <Exercises setExercises={setExercises}
+            {age === 40 && <Exercises setExercises={setExercises}
                 bodyPart={'cardio'}
                 exercises={exercises}
 
             />}
-            {age === '60' && <Exercises setExercises={setExercises}
+            {age === 60 && <Exercises setExercises={setExercises}
                 bodyPart={'abs'}
                 exercises={exercises}
 

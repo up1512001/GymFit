@@ -5,20 +5,45 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import ExerciseDetail from './pages/ExerciseDetail'
-
+import { exercisesOptions, fetchData } from './utils/fetchData'
 import './App.css'
-
+import Talk from './chat/App';
 const App = () => {
-    const [age, setAge] = useState('');
+    // const fetchExercisesData = async () => {
+    //     const bodyPartsData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList'
+    //         , exercisesOptions);
+
+    //     console.log(bodyPartsData)
+        
+    //     // console.log(bodyParts)
+    // }
+    // fetchExercisesData()
+
+    const [age, setAge] = useState(0);
+    const [imageclicked,setImageclicked] = useState(0);
+    
+    useEffect(()=>{
+        console.log(`App : ${age}`);
+    },[age])
+
+    // useEffect(()=>{
+    //     console.log(age)
+    // },[age])
+    console.log(imageclicked);
     console.log(`app :${age}`);
     return (
         <Box width="400px" sx={{ width: { xl: '1488px' } }} m='auto'>
-            <Navbar setAge={setAge} age={age} />
+            <Navbar setAge={setAge}  setImageclicked={setImageclicked} />
             {console.log(`app : ${age}`)}
-            <Routes>
-                <Route path="/" element={<Home age={age} />} />
+            {imageclicked === 0 && <Routes>
+                <Route path="/" element={<Home age={age}  />} />
                 <Route path="/exercise/:id" element={<ExerciseDetail />} />
-            </Routes>
+            </Routes>}
+            {
+            imageclicked===1 && 
+            <Routes>
+                <Route path="/" element={<Talk/>} />    
+            </Routes>}
             <Footer />
         </Box>
     )
