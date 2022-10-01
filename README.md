@@ -10,7 +10,8 @@ Also It show's exercises that target same muscle group and also exercises that u
 It's live hosted on netlify.
 
 [Live Hosted Link](https://golds-gym-up1512001.netlify.app/)
-## Images
+
+# Images
 
 ### Basic site view
 ![](./src/assets/images/ss1%20(1).png)
