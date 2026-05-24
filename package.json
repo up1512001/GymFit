@@ -11,7 +11,7 @@
     "react-dom": "^18.0.0",
     "react-horizontal-scrolling-menu": "^2.7.1",
     "react-loader-spinner": "^6.0.0-0",
-    "react-router-dom": "^6.3.0",
+    "react-router-dom": "^6.30.3",
     "react-scripts": "5.0.1"
   },
   "scripts": {
